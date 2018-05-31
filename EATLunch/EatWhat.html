@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./dist/jquery.slotmachine.css" type="text/css" media="screen" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="./dist/slotmachine.js"></script>
+    <script src="./dist/jquery.slotmachine.js"></script>
+    <script>
+        var machine;
+        $(function () {
+            const planeMachine = document.querySelector('#planeMachine');
+            machine = new SlotMachine(planeMachine, {
+                active: 0,
+                delay: 500,
+                auto: false,
+                randomize() {
+                    return this.random;
+                }
+            });
+
+        });
+        function go() {
+
+            $('.defaultitem').remove();
+
+            machine.shuffle(5);
+        }
+    </script>
+    <title>午餐吃什麼</title>
+</head>
+<body>
+    <div id="plane">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="well content">
+                        <p>今天午餐就吃...<button type="button" class="btn btn-lg btn-primary" onclick="go()">GO</button></p>
+                        <div id="planeMachine">
+                            <div class="text-center defaultitem">
+                                &nbsp;
+                            </div>
+                            <div class="text-center">
+                                建國手工水餃麵食館
+                            </div>
+                            <div class="text-center">
+                                幸福麵食餃子館
+                            </div>
+                            <div class="text-center">
+                                溫洲大餛飩
+                            </div>
+                            <div class="text-center">
+                                采岳軒重慶抄手麵食
+                            </div>
+                            <div class="text-center">
+                                詠嫻越南小吃
+                            </div>
+                            <div class="text-center">
+                                劉漣麵
+                            </div>
+                            <div class="text-center">
+                                回味食堂
+                            </div>
+                            <div class="text-center">
+                                山西御品刀削麵館
+                            </div>
+                            <div class="text-center">
+                                美鄉拉麵屋
+                            </div>
+                            <div class="text-center">
+                                八方雲集建南店
+                            </div>
+                            <div class="text-center">
+                                林記麵食餃子館
+                            </div>
+                            <div class="text-center">
+                                林家米粉湯
+                            </div>
+                            <div class="text-center">
+                                拉亞漢堡-北市建國
+                            </div>
+                            <div class="text-center">
+                                霜 越南河粉信義店
+                            </div>
+                            <div class="text-center">
+                                NoName咖哩
+                            </div>
+                            <div class="text-center">
+                                八麵玲瓏
+                            </div>
+                            <div class="text-center">
+                                定食8
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
